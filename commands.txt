@@ -1,0 +1,55 @@
+/*
+*
+* This is a guide to run tests on appium
+*
+*
+/*
+
+*For execute tests commands it is necesarry to be located on the root folder
+
+-Execute the whole test suite
+
+  ./gradlew test
+
+
+-Execute one specific test of the test suite
+
+  -/gradlew test --tests [testSuiteClass].[testName]
+  example:
+  ./gradlew test --tests TestCases.loginTest
+
+/*
+*
+* Get Mobile capabilities for driver
+*
+*/
+
+IOS
+
+-Get app bundle id:
+
+xcrun simctl listapps {DEVICE_UUID}
+example: 
+xcrun simctl listapps 22A8FB48-43B6-42F1-AAD5-C3944F6A210B
+
+
+
+ANDROID
+
+-Get appPackage and appActivity
+
+For Mac/Linux:
+
+adb shell dumpsys window | grep -E 'mCurrentFocus' 
+
+For Windows:
+
+adb shell dumpsys window | find "mCurrentFocus"
+
+This comand will return somehting like this: 
+com.whatsapp/com.whatsapp.homeActivity 
+
+the first value before the '/' is the appPackage, everything after the '/' is the appACtivity
+Example:
+appPackage: "com.whatsapp"
+appActivity: "com.whatsapp.homeActivity"

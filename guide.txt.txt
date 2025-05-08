@@ -1,0 +1,42 @@
+/*
+*
+* This is a guide to start a new client and run tests
+*
+*
+/*
+
+Checklist before running test: 
+
+- On config.properties file:
+  . replace ADD_CONSULTING_USER_ID //if you dont have it ask a dev to get it for you
+  . replace ADD_BS_KEY
+  . replace ADD_BS_USERNAME
+  . replace ADD_ANDROID_SESSION_HERE //This can be done after the first run of any test because it is generated after the first ever run
+  . replace ADD_IOS_SESSION_HERE //This can be done after the first run of any test because it is generated after the first ever run
+  . replace ADD_IOS_APP_URL
+  . replace ADD_ANDROID_APP_URL
+
+- On Utils.java file:
+  . on line 41 replace ADD_NAME_HERE with the clients name
+  . on line 43 replace ADD_NAME_HERE with the clients name
+  . on line 72 replace ADD_NAME_HERE with the clients name
+  . on line 73 replace ADD_NAME_HERE with the clients name
+
+
+Running tests commands:
+
+Run a whole test suite
+
+  For IOS:
+  ./gradlew test --tests TestCasesIOS
+
+  For Android: 
+  ./gradlew test --tests TestCasesAndroid
+
+Run a specific test from a suite
+
+  for IOS 
+  ./gradlew test --tests TestCasesIOS.NAME_OF_THE_TEST
+
+  for Android
+  ./gradlew test --tests TestCasesAndroid.NAME_OF_THE_TEST
